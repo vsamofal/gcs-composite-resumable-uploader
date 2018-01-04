@@ -42,6 +42,7 @@
     "url": ""
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-runtime": "~6.26.0"
   }
 }
