@@ -1,0 +1,47 @@
+{
+  "name": "gcs-composite-resumable-uploader",
+  "version": "0.0.0",
+  "description": "",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=8.0"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-core": "~6.26.0",
+    "babel-eslint": "~8.0.2",
+    "babel-jest": "~21.2.0",
+    "babel-plugin-transform-async-to-generator": "~6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "~6.26.0",
+    "babel-plugin-transform-flow-strip-types": "~6.22.0",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-stage-3": "~6.24.1",
+    "eslint": "~4.10.0",
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-flowtype": "~2.39.1",
+    "eslint-plugin-import": "~2.8.0",
+    "flow-bin": "~0.58.0",
+    "jest": "~21.2.1"
+  },
+  "scripts": {
+    "clean": "rm -rf coverage dist tmp",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "postlint": "npm run typecheck",
+    "typecheck": "./node_modules/flow-bin/cli.js check",
+    "pretest": "npm run lint",
+    "test": "npm run test-only",
+    "test-only": "./node_modules/jest/bin/jest.js --coverage",
+    "test:watch": "./node_modules/jest/bin/jest.js --watch",
+    "build": "./node_modules/babel-cli/bin/babel.js src/**/*.js -d dist",
+    "build:watch": "./node_modules/babel-cli/bin/babel.js --watch src/**/*.js -d dist"
+  },
+  "author": "vsamofal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "babel-runtime": "~6.26.0"
+  }
+}
