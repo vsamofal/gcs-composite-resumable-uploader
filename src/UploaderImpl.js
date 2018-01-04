@@ -1,21 +1,21 @@
 /** @flow */
 
 import { put } from 'axios';
-import Uploader from './Uploader';
+import { Uploader } from './Uploader';
 import UploadOptions from './UploadOptions';
 
-class UploaderImpl implements Uploader {
+export default class UploaderImpl implements Uploader {
+  options: UploadOptions;
+
   constructor(options: UploadOptions) {
     this.options = options;
   }
-
-  async uploadChunk(url: string, chunk: ArrayBuffer): boolean {
+  uploadChunk(url: string, chunk: ArrayBuffer): Promise<any> {
     const headers = {
-      'content-type': this.options.contentType
+      'content-type': this.options.contentType,
     };
-    put()
-    this.options.onProgress(10);
-    console.log(chunk);
-    return true;
+    return new Promise((resolve, reject) => {
+      return put(url, chunk, { headers, onUploadProgress: this.options.onProgress }).then(resolve).catch(reject);
+    });
   }
 }

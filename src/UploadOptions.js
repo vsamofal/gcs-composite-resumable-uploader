@@ -1,6 +1,6 @@
 /** @flow */
 
-class UploadOptions {
+export default class UploadOptions {
   file: any;
   chunkSize: number;
   uploadUrls: Array<string>;
