@@ -1,17 +1,3 @@
 {
-  "plugins": [
-    ["transform-es2015-modules-commonjs"],
-    ["transform-flow-strip-types"],
-    ["transform-async-to-generator"],
-    ["transform-runtime", {
-      "polyfill": false,
-      "regenerator": true
-    }]
-  ],
-  "env": {
-    "production": {
-      "comments": false,
-      "minified": true
-    }
-  }
+  "presets": ["flow", "es2015", "stage-0", "stage-3"]
 }
