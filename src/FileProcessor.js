@@ -17,7 +17,7 @@ export default class FileProcessor {
   getEndIndex(chunkIndex: number): number {
     const { size } = this.file;
     const endIndex = this.chunkSize * (chunkIndex + 1);
-    return endIndex > size ? size - 1 : endIndex;
+    return endIndex > size ? size : endIndex;
   }
 
   getStartIndex(chunkIndex: number): number {
