@@ -12,6 +12,7 @@
     "babel-core": "~6.26.0",
     "babel-eslint": "~8.0.2",
     "babel-jest": "~21.2.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-async-to-generator": "~6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "~6.26.0",
     "babel-plugin-transform-flow-strip-types": "~6.22.0",
@@ -26,7 +27,8 @@
     "jest": "~21.2.1",
     "jest-mock": "^22.0.3",
     "localstorage": "^0.1.0",
-    "string-to-arraybuffer": "^1.0.0"
+    "string-to-arraybuffer": "^1.0.0",
+    "webpack": "^3.10.0"
   },
   "scripts": {
     "clean": "rm -rf coverage dist tmp",
@@ -38,7 +40,8 @@
     "test-only": "./node_modules/jest/bin/jest.js --coverage",
     "test:watch": "./node_modules/jest/bin/jest.js --watch",
     "build": "./node_modules/babel-cli/bin/babel.js src/**/*.js -d dist",
-    "build:watch": "./node_modules/babel-cli/bin/babel.js --watch src/**/*.js -d dist"
+    "build:watch": "./node_modules/babel-cli/bin/babel.js --watch src/**/*.js -d dist",
+    "bundle": "./node_modules/webpack/bin/webpack.js --display-error-details"
   },
   "author": "vsamofal",
   "license": "MIT",
